@@ -1,4 +1,14 @@
-
+//***************************************************************************
+//
+// Karina Torhan
+// Z2111032
+// CSCI 340 -OPE1 20268
+// Assignment 04 The Josephus Problem
+// Due Date: 9/22/26, 5:00 PM
+// I certify that this is my own work and where appropriate an extension
+// of the starter code provided for the assignment.
+//
+//***************************************************************************
 #include "josephus.h"
 #include <list>
 #include <iostream>
@@ -7,17 +17,15 @@
 #include <algorithm>
 #include <getopt.h>
 
-using namespace std;
-
 // print the underlined message heading for the list
-void print_underlined_string(const string &message)
+void print_underlined_string(const std::string &message)
 {
     std::cout << message << std::endl;
     std::cout << std::string(message.length(), '-') << std::endl;
 }
 
 // print the collection of remaining people in formatted columns
-void print_list(const list<string> &collection, const unsigned &eliminations, int num_cols)
+void print_list(const std::list<std::string> &collection, const unsigned &eliminations, int num_cols)
 {
     if (eliminations == 0)
     {
@@ -106,7 +114,7 @@ int main(int argc, char **argv)
         usage(argv[0]); // If we get here, there was extra junk on command line
 
     // generate the initial list of people using the generator class
-    list<string> people;
+    std::list<std::string> people;
     std::generate_n(std::back_inserter(people), num_people, SEQ(num_people));
 
     // print the starting group
